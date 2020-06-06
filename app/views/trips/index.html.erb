@@ -1,0 +1,9 @@
+<h1>Click Trip</h1>
+<%= link_to 'place index', places_path %>
+<ul>
+<% @trips.each do |trip| %>
+    <li><%= link_to trip.name, trip %></li>
+
+    <%end %>
+  </ul>
+  
