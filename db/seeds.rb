@@ -47,15 +47,7 @@
 
         )
         end
-        2.times do
-                Review.create(
-                    name: 'test',
-                    rating: 4,
-                    user_id: user.id,
-                    trip_id: trip.id
-
-                )
-        end
+        
             
     end
 
