@@ -14,8 +14,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = @trip.places.new
-    
-  end
+    end
 
   def edit
     

@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_trip
+  before_action :set_user
+
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   
@@ -40,6 +41,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
   #deleted this segment didnt look right
 

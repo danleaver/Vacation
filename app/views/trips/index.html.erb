@@ -1,10 +1,12 @@
 <h1>Select a Trip</h1>
 
+
 <ul>
 <% @trips.each do |trip| %>
     <li><%= link_to trip.name, trip %></li>
-     <%= trip.start_date%> through <%= trip.end_date %>
-    <%end %>
+     <%= trip.start_date %>
+     <%= trip.end_date %>
+    <% end %>
     <br/>
     <br/>
     <br/>

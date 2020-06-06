@@ -11,7 +11,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    render partial: 'form'
+    #render partial: 'form'
   end
 
   def edit

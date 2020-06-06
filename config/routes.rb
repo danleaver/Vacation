@@ -10,6 +10,9 @@ resources :places do
 end
 
 resources :users
-resources :reviews
+
+resources :user do
+  resources :reviews
+end
 
 end

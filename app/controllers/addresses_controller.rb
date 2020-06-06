@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   before_action :set_place
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip
 
   def index
     @addresses = @place.addresses
@@ -9,7 +10,7 @@ class AddressesController < ApplicationController
   def create
     @address = @place.addresses.new(address_params)
     if @address.save
-      redirect_to trip_place_path(@place, @address)
+      redirect_to place_address_path(@place, @address)
     else
       render :new
     end
@@ -17,7 +18,7 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      redirect_to [@topic, @address]
+      redirect_to [@place, @address]
     else
       render :edit
     end
@@ -25,7 +26,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to topic_addresses_path
+    redirect_to place_addresses_path
   end
 
   def show
@@ -37,7 +38,7 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    render partial "form"
+    
   end
 
   private
@@ -48,6 +49,10 @@ class AddressesController < ApplicationController
 
     def set_place
       @place = Place.find(params[:place_id])
+    end
+
+    def set_trip
+      @trip = @place.trip_id
     end
 
     def address_params

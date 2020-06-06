@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.full_name %></h1>
+<hr />
+<%= link_to 'See Trip Reviews', user_reviews_path(@user) %>
+<br>
+<%= link_to 'Edit User', edit_user_path([@user]) %>
+<br/>
+<%= link_to 'Delete User', [@user], method: :delete %>
+

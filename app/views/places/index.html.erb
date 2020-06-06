@@ -1,10 +1,13 @@
-<h1><%=@trip.name %> Places</h1>
+<h1><%=@trip.name %> Trip</h1>
 <%= link_to 'Add a new Place', new_trip_place_path(@trip) %>
 <ul>
   <% @places.each do |place| %>
 
     <li><%= link_to place.name, trip_place_path(@trip, place) %></li>
+    Number of Days: <%= place.days %>
   <% end %>
-  
+  <br/>
+  <br/>
+  <%= link_to 'Back to Trip', trip_path(@trip) %>
   
 </ul>

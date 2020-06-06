@@ -15,8 +15,8 @@
         trip = Trip.create(
             
         name: Faker::Address.country,
-        start_date: Faker::Date.between(from: 5.years.ago, to: 2.years.ago),
-        end_date: Faker::Date.between(from: 1.years.ago, to: Date.today)
+        start_date: Faker::Date.between(from: 5.years.ago, to: 4.years.ago),
+        end_date: Faker::Date.between(from: 3.years.ago, to: 2.years.ago)
         )
     
             3.times do
@@ -38,29 +38,29 @@
                     )
                 end
             end
+        
+        
+        2.times do
+        user = User.create(
+            first_name: 'Joe',
+            last_name: 'Biden'
+
+        )
         end
+        2.times do
+                Review.create(
+                    name: 'test',
+                    rating: 4,
+                    user_id: user.id,
+                    trip_id: trip.id
+
+                )
+        end
+            
+    end
+
                 
-            
-            
-            
-            # for i in (1..4)
-                        # seat = Seat.create(
-                        #     number: i,
-                        #     ticket_id: ticket.id
-                        #         )
-                        #         Menu.create(
-                        #                 item: 'glue',
-                        #                 cost: 1,
-                        #                 seat_id: seat.id
-                        #         )
-                        #         Menu.create(
-                        #                 item: Faker::Science.scientist,
-                        #                 cost: rand(6),
-                        #                 seat_id: seat.id
-                        #         )
-                        # end
-                
-    
+
     
             
     
