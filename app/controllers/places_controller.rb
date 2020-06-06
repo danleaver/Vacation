@@ -14,11 +14,11 @@ class PlacesController < ApplicationController
 
   def new
     @place = @trip.places.new
-    render partial: "form"
+    
   end
 
   def edit
-    render partial: "form"
+    
   end
 
 
@@ -26,7 +26,7 @@ class PlacesController < ApplicationController
     @place = @trip.places.new(place_params)
 
     if @place.save
-      redirect_to [@trip, @place]
+      redirect_to trip_places_path(@trip)
     else
       render :new
     end 
@@ -55,8 +55,8 @@ class PlacesController < ApplicationController
       @place = Place.find(params[:id])
     end
 
-    def place_params
-      params.require(:topic).permit(:name, :days)
-    end
   
+    def place_params
+      params.require(:place).permit(:name, :days)
+    end
 end

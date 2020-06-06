@@ -1,2 +1,7 @@
-<h1>Addresses#show</h1>
-<p>Find me in app/views/addresses/show.html.erb</p>
+<h1><%= @place.name %> - <%= @address.full_address %></h1>
+<br/>
+<%= link_to 'Edit Address', edit_place_address_path([@place, @address]) %>
+<br/>
+<%= link_to 'Delete Address', [@place, @address], method: :delete %>
+<br/>
+<%= link_to 'Back To Addresses', place_addresses_path(@place) %>

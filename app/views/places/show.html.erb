@@ -1,2 +1,9 @@
-<h1>Places#show</h1>
-<p>Find me in app/views/places/show.html.erb</p>
+<h1><%= @trip.name %> - <%= @place.name %></h1>
+<br/>
+<%= link_to 'Edit Place', edit_trip_place_path([@trip, @place]) %>
+<br/>
+<%= link_to 'Delete Place', [@trip, @place], method: :delete %>
+<br/>
+<%= link_to 'Back To Places', trip_places_path(@trip) %>
+<br/>
+<%= link_to 'View Addresses', place_addresses_path(@place, @trip) %>

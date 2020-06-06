@@ -1,0 +1,16 @@
+<h1><%= @address.id ? 'Edit Address' : 'Create Address' %></h1>
+<hr />
+<%= form_for [@place, @address] do |f| %>
+  <%= f.label :street %>
+  <%= f.text_field :street, required: true %>
+  <br />
+  <%= f.label :city %>
+  <%= f.text_area :city, required: true %>
+  <br/>
+  <%= f.label :state %>
+  <%= f.text_area :state, required: true %>
+  <br/>
+  <%= f.label :zip %>
+  <%= f.text_area :zip, required: true %>
+  <%= f.submit %>
+<% end %>

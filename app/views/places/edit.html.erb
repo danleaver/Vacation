@@ -1,2 +1,10 @@
-<h1>Places#edit</h1>
-<p>Find me in app/views/places/edit.html.erb</p>
+<h1>Edit Place</h1>
+<hr />
+<%= form_for [@trip, @place] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  
+  <%= f.label :days %>
+  <%= f.text_field :days, required: true, autofocus: true %>
+  <%= f.submit %>
+<% end %>

@@ -9,4 +9,7 @@ resources :places do
   resources :addresses
 end
 
+resources :users
+resources :reviews
+
 end
